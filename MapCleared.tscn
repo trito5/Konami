@@ -1,0 +1,370 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ClearedLayer.gd" type="Script" id=1]
+[ext_resource path="res://gfx/konami code.png" type="Texture" id=2]
+[ext_resource path="res://gfx/konami_titel.png" type="Texture" id=3]
+[ext_resource path="res://gfx/grey_dark.png" type="Texture" id=4]
+[ext_resource path="res://audio/Your Tomorrow - Orchestrated.WAV" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.107971, 0.953125, 0.687858, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0.74902, 0.678431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0.368627, 0.65098, 1 )
+
+[node name="MapCleared" type="Node2D"]
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Sprite3" type="Sprite" parent="."]
+visible = false
+position = Vector2( 390.5, 305.551 )
+scale = Vector2( 9.35, 10.1701 )
+texture = ExtResource( 4 )
+
+[node name="ClearedLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 1 )
+
+[node name="YourTime" type="RichTextLabel" parent="ClearedLayer"]
+margin_left = 337.877
+margin_top = 140.442
+margin_right = 457.877
+margin_bottom = 170.442
+custom_colors/default_color = Color( 0.52549, 1, 0, 1 )
+text = "Your time: 00:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="ClearedLayer"]
+
+[node name="HTTPRequest2" type="HTTPRequest" parent="ClearedLayer"]
+
+[node name="EnterName" type="Node2D" parent="ClearedLayer"]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ClearedLayer/EnterName"]
+margin_left = 252.152
+margin_top = 182.228
+margin_right = 565.152
+margin_bottom = 250.228
+text = "Congratulations! 
+What a speed runner. You made the highscore!
+Enter your name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="ClearedLayer/EnterName"]
+margin_left = 256.0
+margin_top = 246.0
+margin_right = 402.0
+margin_bottom = 270.0
+selecting_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ClearedLayer/EnterName"]
+margin_left = 423.477
+margin_top = 248.477
+margin_right = 475.477
+margin_bottom = 268.477
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+action_mode = 0
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="List" type="Node2D" parent="ClearedLayer"]
+visible = false
+position = Vector2( 2.83167, 16.0459 )
+
+[node name="HighscoreText" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 320.673
+margin_top = 169.345
+margin_right = 452.673
+margin_bottom = 190.345
+text = "QUICKEST CHEATERS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore0" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 204.932
+margin_right = 374.881
+margin_bottom = 221.932
+custom_colors/default_color = Color( 1, 0, 0.0313726, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName0" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 204.932
+margin_right = 479.208
+margin_bottom = 223.932
+custom_colors/default_color = Color( 1, 0, 0.0313726, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore1" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 225.908
+margin_right = 374.881
+margin_bottom = 242.908
+custom_colors/default_color = Color( 1, 0.560784, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName1" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 225.908
+margin_right = 479.208
+margin_bottom = 244.908
+custom_colors/default_color = Color( 1, 0.560784, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore2" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 248.383
+margin_right = 374.881
+margin_bottom = 265.383
+custom_colors/default_color = Color( 1, 0.972549, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName2" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 248.383
+margin_right = 479.208
+margin_bottom = 267.383
+custom_colors/default_color = Color( 1, 0.972549, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore3" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 270.857
+margin_right = 374.881
+margin_bottom = 287.857
+custom_colors/default_color = Color( 0.52549, 1, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName3" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 270.857
+margin_right = 479.208
+margin_bottom = 289.857
+custom_colors/default_color = Color( 0.52549, 1, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore4" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 293.707
+margin_right = 374.881
+margin_bottom = 310.707
+custom_colors/default_color = Color( 0, 1, 0.807843, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName4" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 293.707
+margin_right = 479.208
+margin_bottom = 312.707
+custom_colors/default_color = Color( 0, 1, 0.807843, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore5" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 316.424
+margin_right = 374.881
+margin_bottom = 333.424
+custom_colors/default_color = Color( 0, 0.368627, 1, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName5" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 316.424
+margin_right = 479.208
+margin_bottom = 335.424
+custom_colors/default_color = Color( 0, 0.368627, 1, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore6" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 340.479
+margin_right = 374.881
+margin_bottom = 357.479
+custom_colors/default_color = Color( 0.478431, 0, 1, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName6" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 340.479
+margin_right = 479.208
+margin_bottom = 359.479
+custom_colors/default_color = Color( 0.478431, 0, 1, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore7" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 364.088
+margin_right = 374.881
+margin_bottom = 381.088
+custom_colors/default_color = Color( 0.945098, 0, 1, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName7" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 364.088
+margin_right = 479.208
+margin_bottom = 383.088
+custom_colors/default_color = Color( 0.945098, 0, 1, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore8" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 385.805
+margin_right = 374.881
+margin_bottom = 402.805
+custom_colors/default_color = Color( 1, 0, 0.631373, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName8" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 385.805
+margin_right = 479.208
+margin_bottom = 404.805
+custom_colors/default_color = Color( 1, 0, 0.631373, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresScore9" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 335.881
+margin_top = 408.078
+margin_right = 374.881
+margin_bottom = 425.078
+custom_colors/default_color = Color( 1, 0, 0.192157, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighscoresName9" type="RichTextLabel" parent="ClearedLayer/List"]
+margin_left = 381.208
+margin_top = 408.078
+margin_right = 479.208
+margin_bottom = 427.078
+custom_colors/default_color = Color( 1, 0, 0.192157, 1 )
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain" type="RichTextLabel" parent="ClearedLayer"]
+margin_left = 42.902
+margin_top = 570.616
+margin_right = 134.902
+margin_bottom = 610.616
+text = "[ P ] Play again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 403.28, 121.248 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 395.419, 69.939 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+[connection signal="text_changed" from="ClearedLayer/EnterName/TextEdit" to="ClearedLayer" method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="ClearedLayer/EnterName/Button" to="ClearedLayer" method="_on_Button_pressed"]
